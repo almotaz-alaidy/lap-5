@@ -21,7 +21,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Color myDefultColor = Color.fromARGB(255, 251, 251, 251);
+  Color myDefultColor = Colors.grey;
   Image imageOne = Image(
     image: NetworkImage(
         "https://img.freepik.com/premium-photo/panorama-space-scene-with-planets-stars-galaxies-banner-template-many-nebulae-galaxies-space-many-light-years-away-deep-universe-large-scale-structure-3d-rendered_91497-7933.jpg?w=2000"),
@@ -42,6 +42,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        drawer: Drawer(
+          backgroundColor: Colors.grey,
+
+          // SizedBox(height: 20,),
+          child: Container(
+            padding: EdgeInsets.only(top: 100),
+            child: Text("space x",
+                style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.white,
+                    decoration: TextDecoration.underline)),
+          ),
+        ),
         appBar: AppBar(
           backgroundColor: Colors.grey,
         ),
@@ -57,17 +70,23 @@ class _HomeState extends State<Home> {
                     Container(
                       height: 100,
                       padding: EdgeInsets.only(left: 20),
-                      child: Text("opition 1"),
+                      child: Text(
+                        "opition 1",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            decoration: TextDecoration.underline),
+                      ),
                     ),
                     SizedBox(
-                      width: 50,
+                      width: 25,
                     ),
                     Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.only(top: 100),
-                          height: 300,
-                          width: 300,
+                          padding: EdgeInsets.only(top: 25),
+                          height: 500,
+                          width: 500,
                           child: imageOne,
                         ),
                         Column(
@@ -85,14 +104,13 @@ class _HomeState extends State<Home> {
                                   });
                                 },
                                 icon: Icon(
-                                  Icons.add_box_rounded,
+                                  Icons.image,
                                   color: Color.fromARGB(255, 117, 117, 117),
                                 ),
-                                label: Text("press to change the image "),
+                                label: Text("change image"),
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.white,
                                   onPrimary: Colors.black,
-                                  fixedSize: Size.fromRadius(50),
                                 ),
                               ),
                             ),
@@ -104,11 +122,11 @@ class _HomeState extends State<Home> {
                                 },
                                 icon: Icon(
                                   Icons.abc_sharp,
-                                  color: Color.fromARGB(255, 251, 252, 251),
+                                  color: Colors.grey,
                                 ),
                                 label: Text(""),
                                 style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 245, 221, 148),
+                                  primary: Colors.white,
                                 ),
                               ),
                             ),
@@ -120,11 +138,11 @@ class _HomeState extends State<Home> {
                                 },
                                 icon: Icon(
                                   Icons.ac_unit_outlined,
-                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  color: Colors.grey,
                                 ),
                                 label: Text(""),
                                 style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 1, 57, 71),
+                                  primary: Colors.white,
                                 ),
                               ),
                             ),
@@ -136,11 +154,11 @@ class _HomeState extends State<Home> {
                                 },
                                 icon: Icon(
                                   Icons.access_alarms_rounded,
-                                  color: Color.fromARGB(255, 232, 232, 232),
+                                  color: Colors.grey,
                                 ),
                                 label: Text(""),
                                 style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 6, 49, 243),
+                                  primary: Colors.white,
                                 ),
                               ),
                             ),
@@ -158,7 +176,13 @@ class _HomeState extends State<Home> {
                     Container(
                       height: 100,
                       padding: EdgeInsets.only(left: 20),
-                      child: Text("opition 2"),
+                      child: Text(
+                        "opition 2",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            decoration: TextDecoration.underline),
+                      ),
                     ),
                     SizedBox(
                       width: 50,
@@ -167,24 +191,26 @@ class _HomeState extends State<Home> {
                       children: [
                         Container(
                           // decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50),),),
-                          padding: EdgeInsets.only(left: 20),
+                          padding: EdgeInsets.only(left: 20, top: 100),
                           child: ElevatedButton.icon(
                             onPressed: () {
-                              setState(() {
-                                imageTwo = Image(
-                                    image: NetworkImage(
-                                        "https://www.lockheedmartin.com/content/dam/lockheed-martin/space/photo/exploration/Earth_Moon_Mars.jpg.pc-adaptive.full.medium.jpeg"));
-                              });
+                              setState(
+                                () {
+                                  imageTwo = Image(
+                                      image: NetworkImage(
+                                          "https://www.lockheedmartin.com/content/dam/lockheed-martin/space/photo/exploration/Earth_Moon_Mars.jpg.pc-adaptive.full.medium.jpeg"));
+                                },
+                              );
                             },
                             icon: Icon(
                               Icons.ac_unit_rounded,
-                              color: Color.fromARGB(255, 245, 250, 245),
+                              color: Colors.grey,
                             ),
-                            label: Text("press to change the image"),
+                            label: Text("change image"),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 151, 47, 47),
+                              primary: Colors.white,
                               onPrimary: Colors.black,
-                              minimumSize: Size.square(50),
+                              // minimumSize: Size.square(50),
                             ),
                           ),
                         ),
@@ -196,11 +222,11 @@ class _HomeState extends State<Home> {
                             },
                             icon: Icon(
                               Icons.access_alarms,
-                              color: Color.fromARGB(255, 239, 241, 239),
+                              color: Colors.grey,
                             ),
                             label: Text(""),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 255, 8, 136),
+                              primary: Colors.white,
                             ),
                           ),
                         ),
@@ -212,11 +238,11 @@ class _HomeState extends State<Home> {
                             },
                             icon: Icon(
                               Icons.accessibility_new_rounded,
-                              color: Color.fromARGB(255, 254, 254, 254),
+                              color: Colors.grey,
                             ),
                             label: Text(""),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 103, 141, 94),
+                              primary: Colors.white,
                             ),
                           ),
                         ),
@@ -228,11 +254,11 @@ class _HomeState extends State<Home> {
                             },
                             icon: Icon(
                               Icons.account_balance,
-                              color: Color.fromARGB(255, 244, 244, 244),
+                              color: Colors.grey,
                             ),
                             label: Text(""),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 236, 179, 8),
+                              primary: Colors.white,
                             ),
                           ),
                         ),
@@ -243,8 +269,8 @@ class _HomeState extends State<Home> {
                     ),
                     Container(
                       padding: EdgeInsets.only(top: 100, right: 100),
-                      height: 300,
-                      width: 300,
+                      height: 400,
+                      width: 400,
                       child: imageTwo,
                     ),
                     Container(
@@ -262,30 +288,36 @@ class _HomeState extends State<Home> {
                 child: Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Text("opition 3"),
+                      padding: EdgeInsets.only(left: 20, top: 100),
+                      child: Text(
+                        "opition 3",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            decoration: TextDecoration.underline),
+                      ),
                     ),
                     SizedBox(width: 40),
                     Container(
                       // decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50),),),
-                      padding: EdgeInsets.only(left: 20),
+                      padding: EdgeInsets.only(left: 20, top: 100),
                       child: ElevatedButton.icon(
                         onPressed: () {
                           print("you pressed");
                         },
                         icon: Icon(
                           Icons.accessibility_sharp,
-                          color: Color.fromARGB(255, 254, 255, 254),
+                          color: Colors.grey,
                         ),
                         label: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 222, 116, 116),
-                          fixedSize: Size(5, 5),
+                          primary: Colors.white,
+                          // fixedSize: Size(5, 5),
                         ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(left: 20),
+                      padding: EdgeInsets.only(left: 20, top: 100),
                       child: ElevatedButton.icon(
                         onPressed: () {
                           setState(() {
@@ -296,44 +328,45 @@ class _HomeState extends State<Home> {
                           });
                         },
                         icon: Icon(
-                          Icons.access_time_sharp,
-                          color: Color.fromARGB(255, 240, 240, 240),
+                          Icons.image,
+                          color: Colors.grey,
                         ),
-                        label: Text("pressed to change the image "),
+                        label: Text("change image"),
                         style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 1, 1, 1),
-                            onPrimary: Colors.white),
+                          primary: Colors.white,
+                          onPrimary: Colors.black,
+                        ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(left: 20),
+                      padding: EdgeInsets.only(left: 20, top: 100),
                       child: ElevatedButton.icon(
                         onPressed: () {
                           print("you pressed");
                         },
                         icon: Icon(
                           Icons.ac_unit,
-                          color: Color.fromARGB(255, 246, 252, 246),
+                          color: Colors.grey,
                         ),
                         label: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 69, 1, 60),
+                          primary: Colors.white,
                         ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.only(left: 20),
+                      padding: EdgeInsets.only(left: 20, top: 100),
                       child: ElevatedButton.icon(
                         onPressed: () {
                           print("you pressed");
                         },
                         icon: Icon(
-                          Icons.ac_unit_rounded,
-                          color: Color.fromARGB(255, 250, 252, 250),
+                          Icons.zoom_out_outlined,
+                          color: Colors.grey,
                         ),
                         label: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 76, 5, 70),
+                          primary: Colors.white,
                         ),
                       ),
                     ),
@@ -362,13 +395,19 @@ class _HomeState extends State<Home> {
                   children: [
                     Container(
                       padding: EdgeInsets.only(left: 20),
-                      child: Text("opition 4"),
+                      child: Text(
+                        "opition 4",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            decoration: TextDecoration.underline),
+                      ),
                     ),
                     SizedBox(
-                      width: 50,
+                      width: 10,
                     ),
                     Container(
-                      padding: EdgeInsets.only(left: 200),
+                      padding: EdgeInsets.only(left: 50),
                       height: 500,
                       width: 500,
                       child: imageFoure,
@@ -393,15 +432,14 @@ class _HomeState extends State<Home> {
                           });
                         },
                         icon: Icon(
-                          Icons.accessible_forward_rounded,
-                          color: Color.fromARGB(255, 255, 255, 255),
+                          Icons.image,
+                          color: Colors.grey,
                         ),
-                        label: Text("press to change image "),
+                        label: Text("change image"),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 161, 12, 12),
-                          onPrimary: Colors.white,
-                          minimumSize: Size(20, 20)
-                        ),
+                            primary: Colors.white,
+                            onPrimary: Colors.black,
+                            minimumSize: Size(20, 20)),
                       ),
                     ),
                     Container(
@@ -412,11 +450,11 @@ class _HomeState extends State<Home> {
                         },
                         icon: Icon(
                           Icons.question_answer,
-                          color: Colors.green,
+                          color: Colors.grey,
                         ),
                         label: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 39, 6, 255),
+                          primary: Colors.white,
                         ),
                       ),
                     ),
@@ -428,11 +466,11 @@ class _HomeState extends State<Home> {
                         },
                         icon: Icon(
                           Icons.access_time,
-                          color: Color.fromARGB(255, 253, 253, 253),
+                          color: Colors.grey,
                         ),
                         label: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 84, 106, 117),
+                          primary: Colors.white,
                         ),
                       ),
                     ),
@@ -443,10 +481,13 @@ class _HomeState extends State<Home> {
                           print("you pressed");
                         },
                         icon: Icon(
-                          Icons.question_answer,
-                          color: Colors.green,
+                          Icons.wrap_text_sharp,
+                          color: Colors.grey,
                         ),
                         label: Text(""),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                        ),
                       ),
                     ),
                   ],
@@ -469,7 +510,7 @@ class _HomeState extends State<Home> {
                         },
                         child: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 0, 38, 109),
+                          primary: Colors.blue,
                           minimumSize: Size.fromRadius(10),
                         ),
                       ),
@@ -479,12 +520,12 @@ class _HomeState extends State<Home> {
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            myDefultColor = Color.fromARGB(255, 90, 13, 8);
+                            myDefultColor = Color.fromARGB(255, 0, 196, 166);
                           });
                         },
                         child: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 90, 13, 8),
+                          primary: Color.fromARGB(255, 0, 196, 166),
                           minimumSize: Size.fromRadius(10),
                         ),
                       ),
@@ -494,12 +535,12 @@ class _HomeState extends State<Home> {
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            myDefultColor = Colors.black;
+                            myDefultColor = Color.fromARGB(81, 249, 167, 58);
                           });
                         },
                         child: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 14, 13, 13),
+                          primary: Color.fromARGB(81, 249, 167, 58),
                           minimumSize: Size.fromRadius(10),
                         ),
                       ),
@@ -509,46 +550,16 @@ class _HomeState extends State<Home> {
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            myDefultColor = Colors.grey;
+                            myDefultColor = Color.fromARGB(65, 245, 80, 201);
                           });
                         },
                         child: Text(""),
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.grey,
+                          primary: Color.fromARGB(65, 245, 80, 201),
                           minimumSize: Size.fromRadius(10),
                         ),
                       ),
                     ),
-                    // Container(
-                    //    child: ElevatedButton(
-                    //     onPressed: () {
-                    //       setState(() {
-                    //         image1;
-
-                    //       });
-                    //     },
-                    //     child: Text(""),
-                    //     style: ElevatedButton.styleFrom(
-                    //       primary: Color.fromARGB(255, 255, 0, 0),
-                    //       minimumSize: Size.fromRadius(10),
-                    //     ),
-                    //   ),
-                    // ),
-                    // Container(
-                    //    child: ElevatedButton(
-                    //     onPressed: () {
-                    //       setState(() {
-
-                    //
-                    //       });
-                    //     },
-                    //     child: Text(""),
-                    //     style: ElevatedButton.styleFrom(
-                    //       primary: Color.fromARGB(255, 3, 112, 27),
-                    //       minimumSize: Size.fromRadius(10),
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
